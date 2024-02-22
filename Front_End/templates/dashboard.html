@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Smart Garden</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- Bootstrap core CSS     -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Animation library for notifications   -->
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <!--  Paper Dashboard core CSS    -->
+    <link rel="stylesheet" href="/static/css/paper-dashboard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/themify-icons.css">
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+        <div class="sidebar" data-background-color="black" data-active-color="success">
+
+        <div class="sidebar-wrapper" style="background-color: #1abc9c;">
+            <div class="logo">
+            <a href="#" class="simple-text">SMART GARDEN</a>
+            </div>
+
+            <ul class="nav">
+            <li class="active">
+            <li>
+                <a href="#">
+                <i class="fas fa-seedling"></i>
+                <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="active">
+            <li class="active">
+            <li>
+                <a href="/templates/identified.html">
+                <i class="fas fa-camera"></i>
+                <p>Identified</p>
+                </a>
+            </li>
+
+            </ul>
+        </div>
+        </div>
+
+
+        <div class="main-panel" >
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+                </button>
+                <a class="navbar-brand" href="#">Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="logintest.html">
+                    <i class="fas fa-user"></i>
+                    <p id="nameuser"></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <p>Logout</p>
+                    </a>
+                </li>
+                </ul>
+
+            </div>
+            </div>
+        </nav>
+        <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                <div class="content">
+                    <div class="row">
+                    <div class="col-xs-4">
+                        <div class="icon-big icon-danger text-center">
+                        <i class="fas fa-temperature-high"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="numbers">
+                        <p>Temperature</p>
+                        <span id="tempValue"></span>&#176;C
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                <div class="content">
+                    <div class="row">
+                    <div class="col-xs-3">
+                        <div class="icon-big icon-info text-center">
+                        <i class="fas fa-tint"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div class="numbers">
+                        <p>Humidity</p>
+                        <span id="humValue"></span>%
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                <div class="content">
+                    <div class="row">
+                    <div class="col-xs-3">
+                        <div class="icon-big icon-success text-center">
+                        <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div class="numbers">
+                        <p>Soil Moisture</p>
+                        <span id="soilValue"></span>%
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4" >
+                    <div class="card">
+                    <div class="header">
+                        <h4 class="title">Mode Auto</h4>
+                    </div>
+                    <div class="content">
+                        <center>
+                        <label class="toggleBtn">
+                            <input class="switch-input" id="mode" type="checkbox" onclick=ControlMode() />
+                            <span class="switch-label" data-on="on" data-off="off"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <div class="card" id="voice controll"> 
+                    <div class="header">
+                        <h4 class="title">Voice controll</h4>
+                    </div>
+                    <div class="content">
+                        <center>
+                        <label class="toggleBtn">
+                            <div class="icon-info text-center">
+                                <button style="padding: 10px 30px 5px 30px;" id="startButton"><i class="fas fa-microphone"></i></button>
+                            </div>
+                            
+                        </label>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="Control">
+            <div class="col-md-4">
+                <div class="card">
+                <div class="header">
+                    <h4 class="title">Led Light</h4>
+                </div>
+                <div class="content">
+                    <center>
+                    <label class="toggleBtn">
+                        <input class="switch-input switch2-input" id="LedL" type="checkbox" onclick=ControlLedL() />
+                        <span class="switch-label switch2-label" data-on="on" data-off="off"></span>
+                        <span class="switch-handle switch2-handle"></span>
+                    </label>
+                    </center>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                <div class="header">
+                    <h4 class="title">Led Heat</h4>
+                </div>
+                <div class="content">
+                    <center>
+                    <label class="toggleBtn">
+                        <input class="switch-input" id="LedH" type="checkbox" onclick=ControlLedH() />
+                        <span class="switch-label" data-on="on" data-off="off"></span>
+                        <span class="switch-handle"></span>
+                    </label>
+                    </center>
+                </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" >
+                <div class="card">
+                <div class="header">
+                    <h4 class="title">Automated Watering</h4>
+                </div>
+                <div class="content">
+                    <center>
+                    <label class="toggleBtn">
+                        <input class="switch-input" id="water" type="checkbox" onclick=ControlWater() />
+                        <span class="switch-label" data-on="on" data-off="off"></span>
+                        <span class="switch-handle"></span>
+                    </label>
+                    </center>
+                </div>
+                </div>
+            </div>
+
+            </div>
+            
+            <div class="row" id="setvalue">
+                <div class="col-md-4" >
+                    <div class="card" >
+                    <div class="header">
+                        <h4 class="title">Temp </h4>
+                    </div>
+                    <div class="content" >
+                        <center>
+                            <input type="range" name="" id="sliderTemp" min="0" max="100"  style="width: 100px;" >
+                            <p id="tempset" style="margin-top: 5px;"></p>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" >
+                    <div class="card">
+                    <div class="header">
+                        <h4 class="title">Min Watering</h4>
+                    </div>
+                    <div class="content">
+                        <center>
+                            <input type="range" name="" id="sliderMin" min="0" max="100"  style="width: 100px;" >
+                            <p id="minset" style="margin-top: 5px;"></p>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" >
+                    <div class="card">
+                    <div class="header">
+                        <h4 class="title">Max Watering</h4>
+                    </div>
+                    <div class="content">
+                        <center>
+                            <input type="range" name="" id="sliderMax" min="0" max="100" style="width: 100px;" >
+                            <p id="maxset" style="margin-top: 5px;"></p>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+            <div class="copyright pull-right">
+                IOT Project Group 15 |<span class="text-info"> PTIT</span>
+            </div>
+            </div>
+        </footer>
+
+        </div>
+
+  </div>
+</body>
+    <!--   Core JS Files   -->
+    <script src="/static/js/bootstrap.min.js" ></script>
+    <!--  Checkbox, Radio & Switch Plugins -->
+    <script src="/static/js/bootstrap-checkbox-radio.js"></script>
+    <!--  Charts Plugin -->
+    <script src="/static/js/chartist.min.js"></script>
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+    <script src="/static/js/paper-dashboard.js"></script>
+    <!--   Main JS File   -->
+    <script src="/static/js/dashboard.js"></script>
+</html>
